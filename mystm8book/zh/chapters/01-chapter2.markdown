@@ -5,13 +5,81 @@ C语言是各大高校学习编程的入门语言。但作为入门语言，并�
 
 下面两篇博文，可以用来检验自己C语言是否真正掌握。地址分别是<http://coolshell.cn/articles/945.html>，还有<http://coolshell.cn/articles/873.html>，希望他们能给你带来深入的思考。当然，如果今后要走程序员的道路，类似的这些问题在今后的面试中一定能碰得到（无论是别人面你还是你面别人）。
 
-以下是从上述两篇博文中摘出来的一部分，好好享受吧！
+以下是从上述两篇博文中摘出来的5个问题，答案我会直接列在第五个问题后面，至于为什么，自己去网站找吧！Enjoy it!
+1.下面的程序会输出什么？
+    #include <stdio.h>
+    int main() 
+    {
+        float a = 12.5;
+        printf("%d\n", a); 
+        printf("%d\n", (int)a); 
+        printf("%d\n", *(int *)&a); 
+        return 0; 
+    }
+
+    
+2.下面，我们再来看一个交叉编译的事情，下面的两个文件可以编译通过吗？如果可以通过，结果是什么？
+file1.c 
+    int arr[80]; 
+
+file2.c 
+extern int *arr;
+int main() 
+{
+    arr[1] = 100;
+    printf("%d\n", arr[1]);
+    return 0; 
+} 
 
 
+3.请问下面的程序输出什么？
+#include <stdio.h> 
+int main() 
+{
+    int i;
+    i = 10;
+    printf("i : %d\n",i);
+    printf("sizeof(i++) is: %d\n",sizeof(i++));
+    printf("i : %d\n",i);
+    return 0; 
+}
 
 
+4.下面这个函数返回值是什么？
+    int x = 5;
+    int f() {
+      int x = 3;
+      {
+        extern int x;
+        return x;
+      }
+    }
 
+5.下面的语句哪些是合法的？
+    int (*pf)(void);
+    int f(void)
+    {
 
+       pf = &f; // 没问题
+       pf = ***f; // 取址？
+       pf(); // 函数指针可以调用？
+       (****pf)();  // 这又是什么？
+       (***************f)(); // 这个够变态了吧？
+    }
+
+下面是答案：
+第一题：
+    0
+    12
+    1095237632
+第二题：
+    该程序可以编译通过，但运行时会出错。
+第三题：
+    10，4，10
+第四题：
+    5
+第五题：
+    全部合法。
 
 
 C语言不乏一些蛋疼的比赛，去看看[国际C语言混乱代码大赛](http://www0.us.ioccc.org/years.html)吧,你能看到这样的代码：

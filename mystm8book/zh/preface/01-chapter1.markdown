@@ -18,13 +18,15 @@
   * 第六章：STM8S编程实战
 
 ### 封面及封底 ###
-因为喜欢排版，就自己设计了一个。封面封底的图片都是取景自华师大校园的风景，本手册封面、封底都是使用COREDRAW设计的。
+因为喜欢排版，就自己设计了一个。封面封底的图片都是我本人在华东师范大学的校园里自行拍摄的，使用COREDRAW，进行后期处理。
 
 ### 项目地址 ###
-本次STM8学习项目托管在github上，并且项目完全开源。欢迎大家访问：[www.github.com/vincent5295/stm8teach](www.github.com/vincent5295/stm8teach)
+本次STM8学习项目托管在github上，并且项目完全开源。欢迎大家访问：[www.github.com/vincent5295/stm8teach](www.github.com/vincent5295/stm8teach)。
 
-## 如何写作本手册的 ##
-本手册是使用MARKDOWN格式写作的，感谢larrycai的[mkbok项目](www.github.com/larrycai/mkbok)。
+## 一些注意事项 ##
+
+### 本手册的是如何写作的 ###
+本手册基于markdown格式，我在我的一台上网本（ubuntu）和两台工作站（windows&vista）上分别安装了gedit，相对于notepad++，gedit对markdown的语法高亮支持最好，使用起来很舒服。编辑完后使用[mkbok程序](www.github.com/larrycai/mkbok)进行相应tex、pdf、epub等格式文件的生成。
 
 ### 如何阅读本手册 ###
 一般来说，建议直接阅读电子版，一来可以获得较好的阅读体验，二来可以节约纸张。从保护视力的角度出发，自行打印纸质版也是可以的。但请一定不要忽视电子版，文中随处的可见的链接，是一笔宝贵的财富。本手册编写的一大准则，就是以自身为骨架，通过这些链接，能让读者得到丰富的内容。
