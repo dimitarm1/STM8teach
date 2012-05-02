@@ -5,4 +5,8 @@
 *.SchDoc.zip
 *.PcbDoc.zip
 *.SCHLIB.Zip
+*.aux
+*.fot
+*.log
+*.toc
 *.tmp
