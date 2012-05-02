@@ -16,9 +16,9 @@ default:
 zh:
   title: 跟我学STM8
   langrule: "\\XeTeXlinebreakskip=0em plus 0.1em minus 0.01em\n\\XeTeXlinebreakpenalty=0"
-  font: Simsun (Founder Extended)
-  bold: WenQuanYi Micro Hei
-  mono: WenQuanYi Zen Hei Mono
+  font: Microsoft YaHei
+  bold: Microsoft YaHei
+  mono: Microsoft YaHei
   # AR is 文鼎字体，中文缺省 http://www.arphic.com/cn/home.html
   # http://www.debian.org/international/Chinese/software
   # AR PL UMing: 文鼎PL细上海宋 : 句号有问题

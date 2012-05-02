@@ -18,6 +18,7 @@
 \usepackage{footnpag}
 \usepackage{array}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage[top=25mm,bottom=20mm,left=30mm,right=25mm]{geometry}
 
 \usepackage{titlesec} % texlive-latex-extra package
 \usepackage[titletoc]{appendix} % this is used for \appendices
@@ -37,8 +38,8 @@
 
 \definecolor{shadecolor}{gray}{0.90}
 
-\setromanfont[Mapping=tex-text,BoldFont=WenQuanYi Micro Hei]{AR PL SungtiL GB}
-\setmonofont{WenQuanYi Zen Hei Mono}
+\setromanfont[Mapping=tex-text,BoldFont=Microsoft YaHei]{Microsoft YaHei}
+\setmonofont{Microsoft YaHei}
 
 \XeTeXlinebreaklocale{zh}
 \XeTeXlinebreakskip=0em plus 0.1em minus 0.01em
@@ -113,6 +114,7 @@
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\renewcommand{\baselinestretch}{1.5}\normalsize
 
 \newcounter{img}[chapter]
 \renewcommand{\theimg}{\thechapter.\arabic{img}}
@@ -211,15 +213,17 @@
 \end{itemize}
 \subsection*{封面及封底}
 
-因为喜欢排版，就自己设计了一个。封面封底的图片都是取景自华师大校园的风景，本手册封面、封底都是使用COREDRAW设计的。
+因为喜欢排版，就自己设计了一个。封面封底的图片都是我本人在华东师范大学的校园里自行拍摄的，使用COREDRAW，进行后期处理。
 
 \subsection*{项目地址}
 
-本次STM8学习项目托管在github上，并且项目完全开源。欢迎大家访问：\href{www.github.com/vincent5295/stm8teach}{www.github.com/vincent5295/stm8teach}
+本次STM8学习项目托管在github上，并且项目完全开源。欢迎大家访问：\href{www.github.com/vincent5295/stm8teach}{www.github.com/vincent5295/stm8teach}。
 
-\section*{如何写作本手册的}
+\section*{一些注意事项}
 
-本手册是使用MARKDOWN格式写作的，感谢larrycai的\href{www.github.com/larrycai/mkbok}{mkbok项目}。
+\subsection*{本手册的是如何写作的}
+
+本手册基于markdown格式，我在我的一台上网本（ubuntu）和两台工作站（windows\&vista）上分别安装了gedit，相对于notepad++，gedit对markdown的语法高亮支持最好，使用起来很舒服。编辑完后使用\href{www.github.com/larrycai/mkbok}{mkbok程序}进行相应tex、pdf、epub等格式文件的生成。
 
 \subsection*{如何阅读本手册}
 
@@ -259,11 +263,111 @@
 
 C语言是各大高校学习编程的入门语言。但作为入门语言，并不表示它是简单的。C语言的诞生是和UNIX操作系统密切相关的（一般说来，如果没用过UNIX/类UNIX操作系统，几乎不能认为那个人懂计算机），历史上很难分清到底是先有UNIX还是现有C（有点像先有鸡还是先有蛋的问题）。C语言是最接近底层特性的高级语言，但比汇编语言要好用地多。之前因为CPU编程空间的限制，人们迫不得已采用汇编进行编程。现在，在ARM的平台上已经能够获得C++的编译支持。STM8也有人专门做了程序的C++封装。不过现在嵌入式平台上的C++实现也颇有点像几十年前的C++，即C with class，着重使用类特性。事实上，PC上的C++语言经过这几十年来的发展，已经变得很不一样了。
 
-下面两篇博文，可以用来检验自己C语言是否真正掌握。地址分别是\url{http://coolshell.cn/articles/945.html}，还有\url{http://coolshell.cn/articles/873.html}，希望他们能给你带来深入的思考。当然，如果今后要走程序员的道路，类似的这些问题在今后的面试中一定能碰得到（无论是别人面你还是你面别人）。
+下面两篇博文，可以用来检验自己C语言是否真正掌握。地址分别是\url{http://coolshell.cn/articles/945.html}，还有\url{http://coolshell.cn/articles/873.html}，希望他们能给你带来深入的思考\footnote{当然，如果今后要走程序员的道路，类似的这些问题在今后的面试中一定能碰得到（无论是别人面你还是你面别人）。}。
 
-以下是从上述两篇博文中摘出来的一部分，好好享受吧！
+以下是从上述两篇博文中摘出来的5个问题，答案我会直接列在第五个问题后面，至于为什么，自己去网站找吧！Enjoy it!
 
-C语言不乏一些蛋疼的比赛，去看看\href{http://www0.us.ioccc.org/years.html}{国际C语言混乱代码大赛}吧,你能看到这样的代码：
+1.下面的程序会输出什么？
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+    #include <stdio.h>
+    int main() 
+    {
+        float a = 12.5;
+        printf("%d\n", a); 
+        printf("%d\n", (int)a); 
+        printf("%d\n", *(int *)&a); 
+        return 0; 
+    }
+\end{verbatim}\end{shaded}}
+2.下面，我们再来看一个交叉编译的事情，下面的两个文件可以编译通过吗？如果可以通过，结果是什么？
+
+file1.c
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+    int arr[80]; 
+\end{verbatim}\end{shaded}}
+file2.c
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+extern int *arr;
+int main() 
+{
+    arr[1] = 100;
+    printf("%d\n", arr[1]);
+    return 0; 
+} 
+\end{verbatim}\end{shaded}}
+3.请问下面的程序输出什么？
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+    #include <stdio.h> 
+    int main() 
+    {
+    int i;
+    i = 10;
+    printf("i : %d\n",i);
+    printf("sizeof(i++) is: %d\n",sizeof(i++));
+    printf("i : %d\n",i);
+    return 0; 
+}
+\end{verbatim}\end{shaded}}
+4.下面这个函数返回值是什么？
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+int x = 5;
+int f() {
+  int x = 3;
+  {
+    extern int x;
+    return x;
+  }
+}
+\end{verbatim}\end{shaded}}
+5.下面的语句哪些是合法的？
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+int (*pf)(void);
+int f(void)
+{
+
+   pf = &f; // 没问题
+   pf = ***f; // 取址？
+   pf(); // 函数指针可以调用？
+   (****pf)();  // 这又是什么？
+   (***************f)(); // 这个够变态了吧？
+}
+\end{verbatim}\end{shaded}}
+下面是答案：
+
+第一题：
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+0
+12
+1095237632
+\end{verbatim}\end{shaded}}
+第二题：
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+该程序可以编译通过，但运行时会出错。
+\end{verbatim}\end{shaded}}
+第三题：
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+10，4，10
+\end{verbatim}\end{shaded}}
+第四题：
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+5
+\end{verbatim}\end{shaded}}
+第五题：
+
+{\footnotesize\begin{shaded}\begin{verbatim}
+全部合法。
+\end{verbatim}\end{shaded}}
+C语言不乏一些蛋疼的比赛，去看看\href{http://www0.us.ioccc.org/years.html}{国际C语言混乱代码大赛}吧,你能看到这样的代码\footnote{不用怀疑这段程序是否能够通过编译，这是一个图像降采样的工具。具体使用说明参见\url{http://www0.us.ioccc.org/2011/akari/hint.text}。我想说的是，维护这样的代码真是坑爹啊！}：
 
 {\footnotesize\begin{shaded}\begin{verbatim}
 	                               /*
@@ -310,8 +414,6 @@ u++;i++;}fprintf   (q,    d,k,           u      >>1,i>>1,r);u  = k-5?8:4;k=3;}el
 	             (   -/*}/   */0x01        );       {;{    }}
 	                    ;           /*^w^*/        ;}
 \end{verbatim}\end{shaded}}
-P.S.不用怀疑这段程序是否能够通过编译，这是一个图像降采样的工具。具体使用说明参见\url{http://www0.us.ioccc.org/2011/akari/hint.text}。我想说的是，维护这样的代码真是坑爹啊！
-
 \section{声明与定义}
 
 \section{关于union}
@@ -326,9 +428,15 @@ P.S.不用怀疑这段程序是否能够通过编译，这是一个图像降采�
 
 \chap{软件开发那点事}
 
-下面是一些开发方面的问题：你有没有使用vim写过一个50行以上的小程序？你有没有使用过gcc编译，再用gdb调试过程序？你有没有写过一个makefile，写好程序后敲一个make，编译、测试、安装或者更多的东西一键搞定。当然如果作为大的软件项目来说，版本控制系统自然是少不了的，那么你有没有使用过Git、CVS或是SVN，对项目的代码checkin、checkout、merge、revert？
+下面这些东西,是我在软件方面的书籍和实践中学习到的一点心得.之前学习嵌入式的时候,并没有接触到相关的知识.
 
-\section{使用Git来管理你的项目}
+\section{使用版本控制管理工具}
+
+你是否有这样一种经历?当你在电脑上辛辛苦苦赶项目，马上就要做完了，但是因为突发情况（比如停电什么的），一瞬间，所有的工作都得从头开始，你欲哭无泪。于是，在几次这样的悲剧发生后，你吸取了教训，开始备份\footnote{一般有备份意识的人还是少的，本人即使在保持备份的意识下，也曾经因为一些原因丢失工作数据，造成一些尴尬情况的。}。比较原始的备份策略就是本工作文件定期复制到某个文件夹中，但过不久你就会发现，你已经分不清哪个是你最新版本的工作文件了。接着你以\textbf{文件名\_编辑时间}的方式，把文件存放在同一路径下，这样似乎好一些了，但是如果整个硬盘遭受物理性损坏，所有备份的数据就一起陪葬了。似乎raid是一个好的解决方案，但是对于一般用户来说似乎又不太能够承受，而且，过于复杂的操作，会降低用户备份的积极性。可能你每天修改3、4次文件，但是却半个月才想到要备份一次。
+
+那么什么是这个问题的优秀解决方案？
+
+\subsection{使用Git来管理你的项目}
 
 Git是一种版本控制工具，之前出现的比较著名的有SVN、CVS、Clearcase\ldots{}\ldots{}，他们都被广泛使用于各种各样的软件项目中。Git相对于其它工具的优点在于，Git是分布式的，而也就是说软件源是保存在用户本地，而非只是在远程服务器上。这样，就方便用户能够随时接触到代码。而且万一远程服务器出现故障，数据的安全性也有保障。现在很多项目已经转移到Git上了，著名的有：linux内核，
 
@@ -336,7 +444,7 @@ Git是一种版本控制工具，之前出现的比较著名的有SVN、CVS、Cl
 
 如果是第一次安装，配置环境的图文教程可以在\url{http://help.github.com/win-set-up-git/}找到。同时\href{http://help.github.com/}{Github的帮助网站}上面有关于Git的详细帮助。
 
-当然如果需要系统的学习一下子，\href{http://progit.org/}{《PROGIT》}这本书就是一个比较详尽的教程。
+当然如果需要系统的学习，\href{http://progit.org/}{《PROGIT》}这本书就是一个比较详尽的教程。
 
 \section{说说IDE}
 
@@ -346,9 +454,9 @@ Git是一种版本控制工具，之前出现的比较著名的有SVN、CVS、Cl
 
 我们大量使用IDE，是有原因的： 一方面IDE的安装使用极其方便，网上下好一路next即可，所有需要的工具都在里面，不许要用户自行去寻找。另一方面，IDE所提供的程序经过较好的测试，稳定性更高些。
 
-\subsection{IDE的不足}
-
 \subsection{尝试着脱离IDE吧}
+
+尽管IDE非常方便，但是我们
 
 \section{对开源本身的思考}
 
@@ -388,9 +496,7 @@ STM8S是意法半导体推出的一款8位高性能单片机。它基于哈弗�
 
 这节写的比较纠结，因为IDE的东西，操作说得太絮叨了。如果可以的话，根据上节所讲的知识，自己试试看建立自己的工程文件吧。
 
-\section{使用STVP建立自己的工程文件}
-
-这节写的比较纠结，因为IDE的东西，操作说得太絮叨了。如果可以的话，根据上节所讲的知识，自己试试看建立自己的工程文件吧。
+\section{COSMIC编译器}
 
 在这个案例开始前，我们必须要清楚STM8的时钟以及GPIO。
 
