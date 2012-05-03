@@ -11,11 +11,15 @@
 ### 使用Git来管理你的项目 ###
 Git的优势在于快速、免费，当然，最终要的是，Git是分布式的，也就是说软件库是保存在用户本地，而非像clearcase、SVN这样，保存在远程服务器上。这样，就方便用户能够随时接触到代码。而且万一远程服务器出现故障，利用用户的数据也能基本恢复服务端的数据，数据的安全性更有保障。现在很多项目已经转移到Git上了，著名的有：[linux内核](https://github.com/torvalds/linux)，[groovy](https://github.com/groovy/groovy-core),[pandoc](https://github.com/jgm/pandoc)等等……
 
-如果你想学习Git，建议你在Github上建立一个账户。Github是一个支持Git的项目托管网站。有很多程序员使用该网站对自己的项目进行管理，并且与网友协作开发。价格方面，如果你的项目是开源的，那么一切都是免费的。
+如果想学git，以下这些事情是必须的：
+
+*在Github上建立一个账户。Github是一个支持Git的项目托管网站。有很多程序员使用该网站对自己的项目进行管理，并且与网友协作开发。价格方面，如果你的项目是开源的，那么一切都是免费的。
 
 如果是第一次安装，配置环境的图文教程可以在<http://help.github.com/win-set-up-git/>找到。同时[Github的帮助网站](http://help.github.com/)上面有关于Git的详细帮助。
 
 当然如果需要系统的学习，[《PROGIT》](http://progit.org/)这本书就是一个比较详尽的教程。
+
+等用完一段时间再来看看这里吧，看看你能不能自己写一篇Git Guide了？
 
 ## 说说IDE ##
 平时经常可以听到IDE，这个名字。那么IDE到底是什么呢？
