@@ -11,9 +11,17 @@
 为了便于使用者快速开发程序，意法半导体公司为STM8开发了库函数，并带有详尽的使用文档和使用案例。这样一来程序
 我们要找的库函数文件在<http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm8_stdperiph_lib.zip>。这个库函数适用于STM8S以及STM8A的芯片
 
+## STVD以及STVP##
 
+要对我们的STM8芯片编程，
+<http://www.st.com/internet/com/SOFTWARE_RESOURCES/TOOL/TOOLSET/sttoolset.zip>
 
-## 使用STVP建立自己的工程文件 ##
+### 使用STVD建立自己的工程文件 ###
+
+STVD的地址：
+
+![STVD的界面](figures/stvd.jpg)
+
 这节写的比较纠结，因为IDE的东西，操作说得太絮叨了。如果可以的话，根据上节所讲的知识，自己试试看建立自己的工程文件吧。
 
 ## COSMIC编译器 ##

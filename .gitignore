@@ -6,10 +6,11 @@
 *.PcbDoc.zip
 *.SCHLIB.Zip
 *.aux
+*.out
 *.fot
 *.log
 *.toc
 *.tmp
 Backup_of_*
 main.tex
-mystm8book.pdf
+mystm8book.zh.pdf
