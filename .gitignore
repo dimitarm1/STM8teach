@@ -5,6 +5,7 @@
 *.SchDoc.zip
 *.PcbDoc.zip
 *.SCHLIB.Zip
+*.PrjPCB.zip
 *.aux
 *.out
 *.fot

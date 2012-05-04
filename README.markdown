@@ -1,4 +1,4 @@
-# 基于STM8单片机的教学平台构建 #
+# 基于STM8单片机的开源教学平台构建 #
 
 #### Construction of STM8 Teach Platform ####
 
@@ -9,14 +9,29 @@
  
 
 ## 怎样参与该项目 ##
-> 由于时间和能力的限制，所以我对现在完成的内容还深感不足。
+>由于时间仓促，水平有限，希望大家有兴趣的话能加入这个项目，和我一起完善它。下面是这个项目的一些细节：
+
+### 生成手册前的准备工作 ###
+~~~~~~~~~~
+$ sudo apt-get install ruby1.9.1
+$ sudo apt-get install pandoc
+$ sudo apt-get install texlive-xetex
+$ sudo apt-get install texlive-latex-recommended # 主要的Latex包
+$ sudo apt-get install texlive-latex-extra # titlesec包，先不用知道
+$ sudo apt-get install ttf-arphic-gbsn00lp ttf-arphic-ukai # 文鼎字体
+$ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # 文泉驿字体
+$ sudo gem install mkbok
+~~~~~~~~~~ 
+
+将msfonts文件夹复制到/usr/share/fonts/（注意要加sudo），安装Times New Roman以及微软雅黑字体。
+要生成电子书，直接在mystm8book目录下输入命令 `mkbok` 就好了。
 
 
 ### 目录结构 ###
 
 > code：STM8学习手册配套例程；
 
-> mystm8book：开源STM8手册；
+> mystm8book：开源STM8学习手册；
 
 > paper：本人本科毕业论文，因一些特殊原因2012年7月之前处于加密状态。7月之后如果有需要，我会解除密码限制；
 
