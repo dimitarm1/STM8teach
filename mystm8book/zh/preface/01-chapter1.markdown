@@ -37,5 +37,22 @@
 ### 项目网站上的开发板 ###
 项目网站上的核心板、资源板基于开放式设计。只是一个参考，如果不愿意自己画板子，可以直接将网站上的板子发到制版厂做，或者在网上买一款开发板都是可行的。资源板只提供原理图（因为模块太多，都做板子不实惠），因为这些模块PCB设计比较简单，需要做PCB的，自行copy所需模块，导入至PCB文件，连少许线即可。
 
+### 来加入这个项目吧 ###
+由于时间仓促，水平有限，希望大家能加入这个项目，和我一起完善这本手册。
+
+~~~~~~~~~~
+$ sudo apt-get install ruby1.9.1
+$ sudo apt-get install pandoc
+$ sudo apt-get install texlive-xetex
+$ sudo apt-get install texlive-latex-recommended # 主要的Latex包
+$ sudo apt-get install texlive-latex-extra # titlesec包，先不用知道
+$ sudo apt-get install ttf-arphic-gbsn00lp ttf-arphic-ukai # 文鼎字体
+$ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # 文泉驿字体
+$ sudo gem install mkbok
+~~~~~~~~~~ 
+
+将msfonts文件夹复制到/usr/share/fonts/（注意要加sudo），安装Times New Roman以及微软雅黑字体。
+要生成电子书，直接在mystm8book目录下输入命令 `mkbok` 就好了。
+
 ## 致谢 ##
 在本手册的编写过程中，遇到很多困难。在此感谢惠普以及爱立信的同事在软件编程方面对我的指点。特别要感谢爱立信中国通讯有限公司为期一周的敏捷开发培训，学到了不少有趣的东西。感谢larrycai在Github上的[kaiyuanbook](www.github.com/larrycai/kaiyuanbook)以及[mkbok](www.github.com/larrycai/mkbok)项目，为本手册的快速写作奠定了基础。最后要感谢周围的老师同学们在本项目的实践过程中，对本人给予的无私帮助，没有你们的鼓励与支持，就没有这本手册。
