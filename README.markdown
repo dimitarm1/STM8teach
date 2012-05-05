@@ -86,6 +86,8 @@ $ sudo gem install mkbok
 
 > > 八段数码管（由热心网友katrina提供）
 
+> > AT45DB021存储模块（由热心网友katrina提供）
+
 > STM8核心板设计
 
 > 学习指导手册

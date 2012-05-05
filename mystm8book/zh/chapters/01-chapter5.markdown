@@ -31,6 +31,7 @@ STVD可以从下面网址获得：<http://www.st.com/internet/com/SOFTWARE_RESOU
 
 在这个案例开始前，我们必须要清楚STM8的时钟以及GPIO。
 
+## 编程之前要知道的 ##
 
 ### STM8软件编写注意事项[^25] ###
 
@@ -45,6 +46,19 @@ STVD可以从下面网址获得：<http://www.st.com/internet/com/SOFTWARE_RESOU
 4.有一些状态寄存器的位的清零是通过读该寄存器来实现的，所以对这样的寄存器操作要清楚其后果。
 
 5.建议将常用的变量分配在Zero page中，这样可以提高这些变量的访问速度。对于不常用的变量可以用@near定义在0xFF以外区域（相对来说，访问速度略慢）。用户可以根据实际情况决定。
+
+### 变量 ###
+
+left                right       left
+--------------		--------	--------
+signed char         int8_t      s8
+signed short        int16_t     s16
+signed long         int32_t     s32
+unsigned char       uint8_t     u8
+unsigned short      uint16_t    u16
+unsigned long       uint32_t    u32
+--------------		--------	--------
+
 
 ## 时钟 ##
 
@@ -64,7 +78,7 @@ Master时钟源有四种选择:
 
 默认情况下，系统默认使用HSI/8的时钟源，也就是说系统默认的运行速率是2Mhz。
 
-### 时钟树 ###
+### 时钟 ###
 
 
 
@@ -79,3 +93,7 @@ Master时钟源有四种选择:
 
 
 ## 计时器 ##
+
+
+
+## ADC ##
