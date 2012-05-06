@@ -9,8 +9,9 @@
 
 
 ## STM8官方库函数简介 ##
-为了便于使用者快速开发程序，意法半导体公司为STM8开发了库函数，并带有详尽的使用文档和使用案例。这样一来程序
-我们要找的库函数文件在<http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm8_stdperiph_lib.zip>。这个库函数适用于STM8S以及STM8A的芯片
+为了便于使用者快速开发程序，意法半导体公司为STM8开发了[官方库函数](http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm8_stdperiph_lib.zip)[^21]，并带有详尽的使用文档和使用案例。
+
+[^21]:这个库函数同时适用于STM8S以及STM8A的芯片.
 
 ![库函数结构](figures/stm8_lib_architecture.jpg)
 
@@ -100,6 +101,12 @@ Master时钟源有四种选择:
 
 
 ## 计时器 ##
+
+STM8S208MB有TIM1、TIM2、TIM3、TIM4。
+
+TIM1是16位高级定时器，TIM2、TIM3是16位通用目的定时器，TIM4是8位基本定时器。
+
+
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\TIM*\` 提供的例程
 
