@@ -1,5 +1,6 @@
 # STM8编程实战之基础篇 #
-本章从一个呼吸灯实验入手，再逐步加入中断、计时器等。带
+
+本章首先介绍了STM8库函数及编写代码的环境，然后从例子着手，向读者介绍了时钟、GPIO、中断、计时器、ADC这块的使用方法和注意事项，每个部分后面会有ST官方给出的范例代码地址，可以供读者自行借鉴。
 
 
 
@@ -79,26 +80,30 @@ Master时钟源有四种选择:
 默认情况下，系统默认使用HSI/8的时钟源，也就是说系统默认的运行速率是2Mhz。
 
 
-*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\CLK\提供的例程
+*阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\CLK\` 提供的例程
 
 ## GPIO ##
 
-*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\GPIO\提供的例程
+*阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\GPIO\` 提供的例程
 
-### GPIO的几种状态 ###
+### GPIO的几种状态及其应用 ###
 
 
 
 ## 中断 ##
 
-*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ITC\提供的例程
-*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\EXTI\提供的例程
+*阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ITC\` 提供的例程
+
+*阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\EXTI\` 提供的例程
+
+
+
 
 ## 计时器 ##
 
-*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\TIM*\提供的例程
+*阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\TIM*\` 提供的例程
 
 
 ## ADC ##
 
-*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ADC2\提供的例程
+*阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ADC2\` 提供的例程
