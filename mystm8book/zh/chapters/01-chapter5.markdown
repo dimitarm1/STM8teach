@@ -78,12 +78,12 @@ Master时钟源有四种选择:
 
 默认情况下，系统默认使用HSI/8的时钟源，也就是说系统默认的运行速率是2Mhz。
 
-### 时钟 ###
 
-
-
+*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\CLK\提供的例程
 
 ## GPIO ##
+
+*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\GPIO\提供的例程
 
 ### GPIO的几种状态 ###
 
@@ -91,9 +91,14 @@ Master时钟源有四种选择:
 
 ## 中断 ##
 
+*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ITC\提供的例程
+*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\EXTI\提供的例程
 
 ## 计时器 ##
 
+*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\TIM*\提供的例程
 
 
 ## ADC ##
+
+*阅读库函数文件夹下STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ADC2\提供的例程
