@@ -27,7 +27,7 @@ STM8S是意法半导体推出的一款8位高性能单片机。它基于哈弗�
 项目网站上有做好的STM8核心板，可以直接发到制版厂制版，每块板平均成本也就10快左右。当然如果条件允许的话，最好能够自己画一块STM8开发板。具体可以参考ST的文档[AN2752:Getting started with STM8S and STM8A](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/APPLICATION_NOTE/CD00194637.pdf)。
 
 ## 如何下载程序 ##
-STM8有两种下载方式，一种叫SWIM，还有一种叫DM。一般SWIM的方式用的比较多，但是需要ST开发的ST-link下载器。ourdev[^20]上有才的网友想到了[另一种方案](http://www.ourdev.cn/forum.php?mod=viewthread&tid=4209177)，能够减少对ST-link的依赖。见：。项目网站上的核心板出于这种方案的考虑，加入了pl2303，方便用户直接烧录。
+STM8有两种下载方式，一种叫SWIM，还有一种叫DM。一般SWIM的方式用的比较多，但是需要ST开发的ST-link下载器。ourdev[^21]上的网友提供了[一种方案](http://www.ourdev.cn/forum.php?mod=viewthread&tid=4209177)，通过使能bootloader，能够使用串口直接对单片机烧写程序。项目网站上的核心板出于这种方案的考虑，加入了pl2303，方便用户直接烧录。后面要讲过的STVP可不能用到这个方案，应该使用的软件叫[STM32 and STM8 Flash loader demonstrator](http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/SW_DEMO/stm32-stm8_flash_loader_demo.zip)。
 
-[^20]:ourdev是个非常有意思的网站，上面有很多网友自己设计的项目，以及针对电子方面的讨论。站长阿莫也是一个很有性格的人。有空建议大家多上这个网站逛逛。
+[^21]:ourdev是个非常有意思的网站，上面有很多网友自己设计的项目，以及针对电子方面的讨论。站长阿莫也是一个很有性格的人。有空建议大家多上这个网站逛逛。
 
