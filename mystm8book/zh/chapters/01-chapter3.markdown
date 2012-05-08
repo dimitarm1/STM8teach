@@ -70,7 +70,7 @@ int main()
 
 开源的字面意思是：源代码公开，也就是说软件的代码可以免费获得，并且可自由传播。
 
-盖茨曾经有这样的说法，开源软件因为极少赚得到钱，所以缺少应有的维护，软件质量非常差。现在看来，这样的话似乎只是盖茨想靠软件赚钱的拖辞。操作系统包括solaris、ubuntu，办公软件包括libre office，图片处理有GIMP，影音播放有Mplayer、VLC media player，桌面环境包括KDE、GNOME、Unity，软件编程的软件就更多啦：gcc、gdb、vim、emacs、gedit、eclipse、monodevelop……几十年来，开源软件不光没有消亡、而且呈现蓬勃发展之势。
+盖茨曾经有这样的说法，开源软件因为极少赚得到钱，所以缺少应有的维护，软件质量非常差。现在看来，这样的话似乎只是盖茨想靠软件赚钱的拖辞。操作系统包括solaris、ubuntu，办公软件包括libre office，图片处理有GIMP，影音播放有Mplayer、VLC media player，桌面环境包括KDE、GNOME、Unity，软件编程的软件就更多啦：gcc、 gdb、 vim、 emacs、 gedit、 eclipse、 monodevelop…… 几十年来，开源软件不光没有消亡、而且呈现蓬勃发展之势。
 
 在闭源产品的企业里，因为客户往往看不到代码，所以企业的员工写起代码会比较随性[^19]。可能他写出的代码风格非常糟糕，但是只要能工作，就可以提交了。实际代码内部可能存在无数bug。
 
@@ -78,16 +78,18 @@ int main()
 
 而在开源软件项目里，因为源代码公开，作者写的每一行代码往往是被数以万计的程序员审查着。稍一不慎就会被别的大牛看出来，所以逼得开源作者只好带着一万个小心，踏踏实实去写代码。这样一来软件质量也上去了。
 
-无论软件质量好成什么样，都不可能没有bug。当闭源软件出了问题时，用户只能祈祷厂商能够发现这个问题，在个把月甚至一两年内解决。在此期间，用户什么事都做不了。开源软件不一样，用户可以通过自己或者周围懂编程的人修改源代码，很短时间内就把bug搞定了。
 
 
 ![开源标志](figures/opensourceicon.jpg)
 
 
 
+无论软件质量好成什么样，都不可能没有bug。当闭源软件出了问题时，用户只能祈祷厂商能够发现这个问题，在个把月甚至一两年内解决。在此期间，用户什么事都做不了。开源软件不一样，用户可以通过自己或者周围懂编程的人修改源代码，很短时间内就把bug搞定了。
+
 
 ## 其它参考 ##
-*从[程序员修炼之道——从小工到专家](http://www.amazon.cn/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93-%E4%BB%8E%E5%B0%8F%E5%B7%A5%E5%88%B0%E4%B8%93%E5%AE%B6-%E4%BA%A8%E7%89%B9/dp/B004GV08CY/ref=sr_1_1?ie=UTF8&qid=1336305524&sr=8-1)也可以获得一些软件编程思想上的有益指导。
 
-*从[Linux Coding Style](https://github.com/torvalds/linux/blob/master/Documentation/CodingStyle)学习优良的程序编写规范（网上有中文翻译版本）。
+*阅读[程序员修炼之道——从小工到专家](http://www.amazon.cn/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93-%E4%BB%8E%E5%B0%8F%E5%B7%A5%E5%88%B0%E4%B8%93%E5%AE%B6-%E4%BA%A8%E7%89%B9/dp/B004GV08CY/ref=sr_1_1?ie=UTF8&qid=1336305524&sr=8-1)，获得一些软件编程思想上的有益指导。
+
+*阅读[Linux Coding Style](https://github.com/torvalds/linux/blob/master/Documentation/CodingStyle)，学习优良的程序编写规范（网上有中文翻译版本，用google百度下吧:) ）。
 
