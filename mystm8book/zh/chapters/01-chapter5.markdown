@@ -62,7 +62,11 @@ unsigned long       uint32_t    u32
 --------------		--------	--------
 
 
+
+
+
 ## 时钟 ##
+
 
 
 分为Fmaster、Fcpu
@@ -80,18 +84,37 @@ Master时钟源有四种选择:
 
 默认情况下，系统默认使用HSI/8的时钟源，也就是说系统默认的运行速率是2Mhz。
 
+HSI的启动时间远小于HSE外接晶振的启动时间。
+
+### CSS时钟安全系统 ###
+所以在STM8的CSS（Clock Security System）中使用HSI/8作为备用时钟，一旦HSE外接晶振时钟源发生问题，CSS会立即切换到HSI/8。
+
+### 接下来要做的 ###
+
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\CLK\` 提供的例程
 
 ## GPIO ##
 
+### GPIO的几种状态及其应用 ###
+
+
+### 接下来要做的 ###
+
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
+
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\GPIO\` 提供的例程
 
-### GPIO的几种状态及其应用 ###
+
 
 
 
 ## 中断 ##
+
+### 接下来要做的 ###
+
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ITC\` 提供的例程
 
@@ -106,11 +129,18 @@ STM8S208MB有TIM1、TIM2、TIM3、TIM4。
 
 TIM1是16位高级定时器，TIM2、TIM3是16位通用目的定时器，TIM4是8位基本定时器。
 
+### 接下来要做的 ###
+
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
 
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\TIM*\` 提供的例程
 
 
 ## ADC ##
+
+### 接下来要做的 ###
+
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ADC2\` 提供的例程
