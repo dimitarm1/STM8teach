@@ -99,6 +99,8 @@ $ sudo gem install mkbok
 
 >>软件开发那些事
 
+>>STM8芯片简介
+
 > 封面设计
 
 > 毕业论文
