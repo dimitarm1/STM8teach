@@ -33,6 +33,10 @@ STM8S是意法半导体推出的一款8位高性能单片机。它基于哈弗�
 ## 制作自己STM8开发板 ##
 项目网站上有做好的STM8核心板，可以直接发到制版厂制版，每块板平均成本也就10块左右。当然如果条件允许的话，最好能够自己画一块STM8开发板。具体可以参考ST的文档[AN2752:Getting started with STM8S and STM8A](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/APPLICATION_NOTE/CD00194637.pdf)。
 
+
+![项目网站上的STM8核心板实物图](figures/stmcore.jpg)
+
+
 ## 如何下载程序 ##
 STM8有两种下载方式，一种叫SWIM，还有一种叫DM。一般SWIM的方式用的比较多，但是需要ST开发的ST-link下载器。ourdev[^22]上的网友提供了[一种方案](http://www.ourdev.cn/forum.php?mod=viewthread&tid=4209177)，通过使能bootloader，能够使用串口直接对单片机烧写程序，如果是课堂上课，这种方法还是很有推广价值。项目网站上的核心板出于这种方案的考虑，加入了pl2303，方便用户直接烧录。后面要讲过的STVP可不能用到这个方案，应该使用的软件叫[STM32 and STM8 Flash loader demonstrator](http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/SW_DEMO/stm32-stm8_flash_loader_demo.zip)。
 
