@@ -9,9 +9,9 @@
 
 
 ## STM8官方库函数简介 ##
-为了便于使用者快速开发程序，意法半导体公司为STM8开发了[官方库函数](http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm8_stdperiph_lib.zip)[^21]，并带有详尽的使用文档和使用案例。
+为了便于使用者快速开发程序，意法半导体公司为STM8开发了[官方库函数](http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm8_stdperiph_lib.zip)[^26]，并带有详尽的使用文档和使用案例。
 
-[^21]:这个库函数同时适用于STM8S以及STM8A的芯片.
+[^26]:这个库函数同时适用于STM8S以及STM8A的芯片.
 
 ![库函数结构](figures/stm8_lib_architecture.jpg)
 
@@ -19,8 +19,9 @@
 
 ## STVD以及STVP##
 
-要对我们的STM8芯片编程，自然一个合适的开发环境是少不了的。STM8的开发环境有IAR、Raisonance、以及STVD。其中，STVD是ST官方出品的，对用户免费，并且其提供了汇编编译器。
-STVD可以从下面网址获得：<http://www.st.com/internet/com/SOFTWARE_RESOURCES/TOOL/TOOLSET/sttoolset.zip>。这是一个ST的工具集，安装好后，除了STVD外，还有一个程序叫STVP的，我们一般使用这个程序向芯片下载程序。
+要对我们的STM8芯片编程，自然一个合适的开发环境是少不了的。STM8常用的开发环境有IAR、Raisonance、以及STVD。其中，STVD是ST官方出品的，对用户免费，并且其提供了汇编编译器。
+
+STVD被包含在一个叫[ST Toolset](http://www.st.com/internet/com/SOFTWARE_RESOURCES/TOOL/TOOLSET/sttoolset.zip)的工具集中。除了STVD外，还有一个程序叫STVP的，我们一般使用这个程序向芯片下载程序。
 
 ### 使用STVD建立自己的工程文件 ###
 
@@ -29,15 +30,21 @@ STVD可以从下面网址获得：<http://www.st.com/internet/com/SOFTWARE_RESOU
 
 先留个作业，根据上节所讲的知识，自己试试看建立自己的工程文件吧。
 
-## COSMIC编译器 ##
+## 安装COSMIC编译器 ##
 
-在这个案例开始前，我们必须要清楚STM8的时钟以及GPIO。
+ST Toolset只提供免费的汇编编译器，并没有提供C语言编译器。而我们编写程序都是依靠C语言，所以需要安装另外的C语言编译器。
+
+一般情况下，我们可以安装[COSMIC](http://www.cosmicsoftware.com/download_stm8_32k.php)或者[Raisonance](http://www.raisonance.com/~rkit-stm8-lite-32kb-software-toolset__microcontrollers__product~product__T017:4dap2028hdu9.html)的编译器。这两款编译器都是免费的，但是生成代码得小于32k，不过对于我们初期学习还算够用。我用的是COSMIC，下载时得填写个人信息（可能需要注册），此外安装完成后还得给官方发送一个指定格式的邮件（具体格式安装完程序后会提示你），顺利的话一两天内就能收到license了。
+
+安装完编译器后，安装目录中有些编译器相关的C语言指南。把它放在你的参考文档目录下吧[^27]，经常看看。
+
+[^27]:事实上，在本手册编写的同时，会将相应的文档放在 `STM8teach/STM8reference` 文件夹下。
 
 ## 编程之前要知道的 ##
 
-### STM8软件编写注意事项[^25] ###
+### STM8软件编写注意事项[^28] ###
 
-[^25]:摘自2009年ST MCU巡回演讲PPT
+[^28]:摘自2009年ST MCU巡回演讲PPT
 
 1.主时钟是否正常起振并稳定，各个外设时钟是否开启。
 
@@ -88,6 +95,8 @@ HSI的启动时间远小于HSE外接晶振的启动时间。
 
 ### CSS时钟安全系统 ###
 所以在STM8的CSS（Clock Security System）中使用HSI/8作为备用时钟，一旦HSE外接晶振时钟源发生问题，CSS会立即切换到HSI/8。
+
+### Optin Bytes ###
 
 ### 接下来要做的 ###
 
