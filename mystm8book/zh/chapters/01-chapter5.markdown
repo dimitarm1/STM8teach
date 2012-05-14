@@ -75,6 +75,8 @@ unsigned long       uint32_t    u32
 ## 时钟 ##
 
 
+![时钟树](figures/clocktree.jpg)
+
 
 分为Fmaster、Fcpu
 
@@ -96,7 +98,11 @@ HSI的启动时间远小于HSE外接晶振的启动时间。
 ### CSS时钟安全系统 ###
 所以在STM8的CSS（Clock Security System）中使用HSI/8作为备用时钟，一旦HSE外接晶振时钟源发生问题，CSS会立即切换到HSI/8。
 
-### Optin Bytes ###
+### Option Bytes ###
+Option Bytes有点类似于AVR的熔丝位，可以通过SWIM的方式进行读写。还记得前面讲过的SWIM使能BOOTLOADER吗?其实它就是通过SWIM改写Option Bytes的一个过程。
+
+
+具体内容可以参考datasheet上面的相关章节。
 
 ### 接下来要做的 ###
 
