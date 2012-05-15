@@ -14,6 +14,7 @@
 ### 生成手册前的准备工作 ###
 
 编译环境使用linux，以下命令运行于ubuntu12.04下，仅供参考。
+
 ~~~~~~~~~~
 $ sudo apt-get install ruby1.9.1
 $ sudo apt-get install pandoc
@@ -25,9 +26,7 @@ $ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # 文泉驿字体
 $ sudo gem install mkbok
 ~~~~~~~~~~ 
 
-将msfonts文件夹复制到/usr/share/fonts/（注意要加sudo），安装Times New Roman以及微软雅黑字体[^1]。
-
-[^1]:也可通过修改config.yml文件，配置系统已有字体，这样就不需要专门安装msfonts的字体了。
+将msfonts文件夹复制到/usr/share/fonts/（注意要加sudo），安装Times New Roman以及微软雅黑字体。当然，也可通过修改config.yml文件，配置系统已有字体，这样就不需要专门安装msfonts的字体了。
 
 要生成电子书，直接在mystm8book目录下输入命令 `mkbok` 就好了。
 
