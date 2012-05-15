@@ -96,17 +96,16 @@ Master时钟源有四种选择:
 HSI的启动时间远小于HSE外接晶振的启动时间。
 
 ### CSS时钟安全系统 ###
-所以在STM8的CSS（Clock Security System）中使用HSI/8作为备用时钟，一旦HSE外接晶振时钟源发生问题，CSS会立即切换到HSI/8。
+当我们使用外部晶振提供时钟源的时候，一旦时钟源出现故障，系统工作就会出现问题。STM8提供CSS（Clock Security System）功能。它能够在HSE外部时钟源出现问题时，迅速监测并将时钟源切换至芯片内时钟HSI/8。HSI的高启动速度，能够确保无缝切换的实现。
 
 ### Option Bytes ###
 Option Bytes有点类似于AVR的熔丝位，可以通过SWIM的方式进行读写。还记得前面讲过的SWIM使能BOOTLOADER吗?其实它就是通过SWIM改写Option Bytes的一个过程。
 
-
-具体内容可以参考datasheet上面的相关章节。
-
 ### 接下来要做的 ###
 
-*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第九章《Clock Control(clk)》。
+
+*阅读芯片手册第八章《Option bytes》，了解Option Bytes相关内容。
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\CLK\` 提供的例程
 
