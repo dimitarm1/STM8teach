@@ -12,6 +12,8 @@
 >由于时间仓促，水平有限，希望大家有兴趣的话能加入这个项目，和我一起完善它。下面是这个项目的一些细节：
 
 ### 生成手册前的准备工作 ###
+
+编译环境使用linux，以下命令运行于ubuntu12.04下，仅供参考。
 ~~~~~~~~~~
 $ sudo apt-get install ruby1.9.1
 $ sudo apt-get install pandoc
@@ -23,7 +25,10 @@ $ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # 文泉驿字体
 $ sudo gem install mkbok
 ~~~~~~~~~~ 
 
-将msfonts文件夹复制到/usr/share/fonts/（注意要加sudo），安装Times New Roman以及微软雅黑字体。
+将msfonts文件夹复制到/usr/share/fonts/（注意要加sudo），安装Times New Roman以及微软雅黑字体[^1]。
+
+[^1]:也可通过修改config.yml文件，配置系统已有字体，这样就不需要专门安装msfonts的字体了。
+
 要生成电子书，直接在mystm8book目录下输入命令 `mkbok` 就好了。
 
 
@@ -114,13 +119,18 @@ $ sudo gem install mkbok
 >> 暂无，欢迎建议
 
 > 学习指导手册
+>>实战基础篇各外设详解及例程
+
+>>实战高级篇各外设详解及例程
+
+>>补遗篇各外设详解
 
 > ...
 
 
 ## 联系方式 ##
 
-> Emaill地址:laser5295@gmail.com
+> Emaill地址:laser5295(AT)gmail.com
 
 > QQ:肆79陆10贰14
 
