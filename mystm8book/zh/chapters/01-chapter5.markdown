@@ -2,12 +2,6 @@
 
 本章首先介绍了STM8库函数及编写代码的环境，然后从例子着手，向读者介绍了时钟、GPIO、中断、计时器、ADC这块的使用方法和注意事项，每个部分后面会有ST官方给出的范例代码地址，可以供读者自行借鉴。
 
-
-
-
-
-
-
 ## STM8官方库函数简介 ##
 为了便于使用者快速开发程序，意法半导体公司为STM8开发了[官方库函数](http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/FIRMWARE/stm8_stdperiph_lib.zip)[^26]，并带有详尽的使用文档和使用案例。
 
