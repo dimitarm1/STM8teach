@@ -51,16 +51,20 @@ ST Toolset只提供免费的汇编编译器，并没有提供C语言编译器。
 5.建议将常用的变量分配在Zero page中，这样可以提高这些变量的访问速度。对于不常用的变量可以用@near定义在0xFF以外区域（相对来说，访问速度略慢）。用户可以根据实际情况决定。
 
 ### 变量 ###
+初步接触STM8/32的程序，会看到一些长相比较奇怪的变量，比如说u8啊,int16_t，这些其实是对unsigned char，signed short的一个简化。更详细的关系，可以从这里找到。
 
-left                right       left
---------------		--------	--------
-signed char         int8_t      s8
-signed short        int16_t     s16
-signed long         int32_t     s32
-unsigned char       uint8_t     u8
-unsigned short      uint16_t    u16
-unsigned long       uint32_t    u32
---------------		--------	--------
+signed char=         int8_t=      s8
+
+signed short=        int16_t=     s16
+
+signed long=         int32_t=     s32
+
+unsigned char=       uint8_t=     u8
+
+unsigned short=      uint16_t=    u16
+
+unsigned long=       uint32_t=    u32
+
 
 
 
@@ -72,9 +76,9 @@ unsigned long       uint32_t    u32
 ![时钟树](figures/clocktree.jpg)
 
 
-分为Fmaster、Fcpu
+观察图：时钟树可以发现，STM8的工作时钟比起AVR这样的单片机要复杂一点。通过Master时钟源分频，可以得到CPU运行的时钟频率。同时Master时钟源直接供给Timer、SPI、I2C等各外设。
 
-Master时钟源有四种选择:
+而Master时钟源有四种选择:
 
 *1-24MHz高速外加晶振震荡时钟源（HSE）
 
@@ -97,7 +101,7 @@ Option Bytes有点类似于AVR的熔丝位，可以通过SWIM的方式进行读�
 
 ### 接下来要做的 ###
 
-*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第九章《Clock Control(clk)》。
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章《Clock Control(clk)》。
 
 *阅读芯片手册第八章《Option bytes》，了解Option Bytes相关内容。
 
@@ -106,11 +110,56 @@ Option Bytes有点类似于AVR的熔丝位，可以通过SWIM的方式进行读�
 ## GPIO ##
 
 ### GPIO的几种状态及其应用 ###
+input floating
 
+pull-pup
+
+open drain
+
+push-pull
+
+
+### 一个呼吸灯 ###
+下面是一个呼吸灯的例程，软件编写的delay，所以并不精确，比较推荐是使用计时器的方式，后面会提到。
+
+~~~~~~~~~~~~~~~~~~~~~~~~
+#include "stm8s.h"
+#include "delay.h"
+
+void clkInit(void);
+void gpioInit(void);
+
+void main(void)
+{
+    clkInit();
+    gpioInit();
+    while (1)
+    {
+        GPIO_WriteReverse(GPIOA,GPIO_PIN_1);
+        delay_ms(1000);
+    }
+ 
+}
+void clkInit(void)
+{
+    CLK_DeInit();
+    CLK_HSICmd(ENABLE);
+    CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV2);
+}
+void gpioInit(void)
+{
+    GPIO_Init(GPIOA,GPIO_PIN_1,GPIO_MODE_OUT_PP_LOW_FAST);
+}
+void delay(u16 count)
+{
+    while (count != 0)
+        count--;
+}
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### 接下来要做的 ###
 
-*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第十一章。
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\GPIO\` 提供的例程
 
@@ -122,7 +171,7 @@ Option Bytes有点类似于AVR的熔丝位，可以通过SWIM的方式进行读�
 
 ### 接下来要做的 ###
 
-*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第八章。
+*阅读[《RM0016: STM8S and STM8A microcontroller families》](http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/REFERENCE_MANUAL/CD00190271.pdf)第十七章。
 
 *阅读库函数文件夹下 `STM8S_StdPeriph_Lib_V2.1.0\Project\STM8S_StdPeriph_Examples\ITC\` 提供的例程
 
